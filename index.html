@@ -1,17 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conversão de Kilometros para Milhas</title>
     <link rel="icon" type="image/x-icon" href="https://api.iconify.design/ph:alarm-bold.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&family=Spectral:wght@400;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <section class="container">
-
         <i>
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 256 256">
                 <path fill="currentColor"
@@ -20,11 +24,15 @@
         </i>
         <h1>Conversor de Kilometros para Milhas</h1>
         <div class="inputs">
-            <input type="number" id="kmInput" placeholder="Insira o valor em KM">
+            <input type="number" id="kmInput" placeholder="Informe o valor em KM">
             <input type="number" id="mOutput" placeholder="Output" readonly>
         </div>
-        <button id="btn-convert">Converter </button>
+        <button id="btn-convert">Converter</button>
         <p id="message"></p>
+        <span class="top"></span>
+        <span class="right"></span>
+        <span class="bottom"></span>
+        <span class="left"></span>
     </section>
     <script src="script.js"></script>
 </body>

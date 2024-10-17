@@ -1,22 +1,33 @@
-const btnConverter = document.querySelector("#btn-convert");
-const message = document.querySelector("#message");
-const kmInput = document.querySelector("#kmInput");
+// Seleciona os elementos do DOM
+const convertButton = document.querySelector("#btn-convert");
+const messageElement = document.querySelector("#message");
+const kilometerInput = document.querySelector("#kmInput");
+const mileOutput = document.getElementById("mOutput");
 
-const handleConvert = (event) => {
+// Converte quilômetros para milhas e atualiza a interface do usuário
+const handleConversion = (event) => {
     event.preventDefault();
-    const kilometers = document.getElementById("kmInput").value;
-    const miles = kilometers * 0.621371;
 
+    // Obtém o valor de entrada e converte para número
+    const kilometers = parseFloat(kilometerInput.value);
 
-    if (kilometers === '') {
-        alert("Digite um valor para converter!");
-        kmInput.focus();
-        return
+    // Valida a entrada
+    if (isNaN(kilometers) || kilometers === '') {
+        alert("Por favor, insira um número válido para converter!");
+        kilometerInput.focus();
+        return;
     }
 
-    document.getElementById("mOutput").value = miles.toFixed(3);
-    message.innerHTML = kilometers + " Kilometros é igual a " + miles.toFixed(3) + " Milhas.";
-    kmInput.value = '';
-}
+    // Realiza a conversão
+    const miles = kilometers * 0.621371;
 
-btnConverter.addEventListener("click", handleConvert);
+    // Atualiza a interface do usuário com os resultados
+    mileOutput.value = miles.toFixed(3);
+    messageElement.textContent = `${kilometers} quilômetros é igual a ${miles.toFixed(3)} milhas.`;
+
+    // Limpa o campo de entrada
+    kilometerInput.value = '';
+};
+
+// Adiciona um ouvinte de evento ao botão de conversão
+convertButton.addEventListener("click", handleConversion);
